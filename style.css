@@ -135,7 +135,7 @@ body {
   box-shadow: var(--box-shadow-value);
 }
 
-.start-stop-text {
+#start-stop-text {
   transform: translate(4.8px, 0);
 }
 
