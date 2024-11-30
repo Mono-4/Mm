@@ -13,6 +13,7 @@ const sidebar = document.getElementById("sidebar");
 
 const display = document.getElementById("stopwatch-display");
 const startStopBtn = document.getElementById("start-stop-btn");
+const startStopBtn_text = document.getElementById("start-stop-text");
 const deleteBtn = document.getElementById("delete-btn");
 
 const fontSizeSlider = document.getElementById("font-size-slider");
@@ -46,10 +47,10 @@ startStopBtn.addEventListener("click", () => {
     playAudio(tap_audio);
     if (running) {
       clearInterval(interval);
-      startStopBtn.textContent = "START";
+      startStopBtn_text.textContent = "START";
     } else {
       const startTime = Date.now() - elapsedTime;
-      startStopBtn.textContent = "STOP";
+      startStopBtn_text.textContent = "STOP";
       interval = setInterval(() => {
         elapsedTime = Date.now() - startTime;
         updateDisplay(elapsedTime);
@@ -75,7 +76,7 @@ deleteBtn.addEventListener("click", () => {
   running = false;
   elapsedTime = 0;
   updateDisplay(elapsedTime);
-  startStopBtn.textContent = "START";
+  startStopBtn_text.textContent = "START";
   document.body.style.backgroundColor = stopBgColorPicker.value; // delete時背景色は停止時の色
   deleteBtn.classList.remove("visible"); // リセット後にリセットボタンを隠す
 });
