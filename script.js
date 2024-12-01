@@ -31,7 +31,6 @@ let running = false;
 let elapsedTime = 0;
 let interval;
 let keydownHandled = false;
-let firsttime=0;
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // 初期設定: ストップ状態
@@ -58,8 +57,12 @@ startStopBtn.addEventListener("click", () => {
     }
     running = !running;
 
-    if(firsttime!=0)deleteBtn.classList.toggle("visible"); // 停止時にリセットボタンを表示
-    firsttime++;
+    if(running){
+      deleteBtn.classList.remove("visible"); // 停止時にリセットボタンを表示
+    }
+    else{
+      deleteBtn.classList.add("visible"); // 停止時にリセットボタンを表示
+    }
     // 文字の黒と白を入れ替え
     updateBackgroundColor();
 });
