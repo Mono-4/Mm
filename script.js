@@ -180,7 +180,7 @@ document.addEventListener("keydown", (e) => {
       startStopBtn.classList.add("active");
     }
   }
-  if (e.code === "Backspace") {
+  if (e.code === "Backspace" || e.code === "Delete") {
     if (!keydownHandled) {
       deleteBtn.click();
       keydownHandled = true;
