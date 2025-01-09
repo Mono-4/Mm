@@ -13,7 +13,8 @@ const sidebar = document.getElementById("sidebar");
 
 const display = document.getElementById("stopwatch-display");
 const startStopBtn = document.getElementById("start-stop-btn");
-const startStopBtn_text = document.getElementById("start-stop-text");
+const startStopBtn_text = document.getElementById("start-stop-btn-text");
+
 const deleteBtn = document.getElementById("delete-btn");
 
 const fontSizeSlider = document.getElementById("font-size-slider");
@@ -32,7 +33,6 @@ let elapsedTime = 0;
 let keydownHandled = false;
 let firsttime=0;
 
-const startStopButton = document.getElementById("start-stop-btn");
 const deleteButton = document.getElementById("delete-btn");
 const adjustButtons = document.querySelectorAll(".adjust-btn"); // 時間追加/減少ボタン
 const adjustButtonsText = document.querySelectorAll(".adjust-btn-text"); // 時間追加/減少ボタン
@@ -107,11 +107,11 @@ let interval = null; // カウントダウン用のインターバルID
   
     // 「NO COUNT」の状態にする
     if (totalMilliseconds <= 0) {
-      startStopButton.textContent = ""; // 時間が0の時に「NO COUNT」に変更
+      startStopBtn_text.textContent = ""; // 時間が0の時に「NO COUNT」に変更
     } else if (running) {
-      startStopButton.textContent = "PAUSE";
+      startStopBtn_text.textContent = "PAUSE";
     } else {
-      startStopButton.textContent = "START";
+      startStopBtn_text.textContent = "START";
     }
   
     // タイマー動作中の時は、時間追加・減少ボタン、時間指定ボタンを非表示に
@@ -124,19 +124,19 @@ let interval = null; // カウントダウン用のインターバルID
     if (running) {
       clearInterval(interval);
       running = false;
-      startStopButton.textContent = "START";
+      startStopBtn_text.textContent = "START";
       playAudio(start_audio);
 
     } else {
       if (totalMilliseconds <= 0) {
 
-        startStopButton.textContent = ""; // カウントが0の場合は「NO COUNT」表示
+        startStopBtn_text.textContent = ""; // カウントが0の場合は「NO COUNT」表示
         return; // 時間が0の場合はタイマーを開始しない
       }
       document.body.style.backgroundColor = countBgColorPicker.value; // delete時背景色は停止時の色
 
       running = true;
-      startStopButton.textContent = "PAUSE";
+      startStopBtn_text.textContent = "PAUSE";
       interval = setInterval(() => {
         if (totalMilliseconds > 0) {
           totalMilliseconds -= 10; // 10msずつ減らす
@@ -154,7 +154,7 @@ let interval = null; // カウントダウン用のインターバルID
             },800); // 2回目と3回目の間の間隔（1000ミリ秒）
           clearInterval(interval);
           running = false;
-          startStopButton.textContent = ""; // タイムアップ後、ボタンテキストを非表示
+          startStopBtn_text.textContent = ""; // タイムアップ後、ボタンテキストを非表示
           updateDisplay(); // ボタンの表示を更新
           document.body.style.backgroundColor = stopBgColorPicker.value; // delete時背景色は停止時の色
 
@@ -187,7 +187,7 @@ let interval = null; // カウントダウン用のインターバルID
     
     // 時間を加えた後、startStopTimer()を呼び出してSTARTボタンを表示する
     if (totalMilliseconds > 0) {
-      startStopButton.textContent = "START"; // ボタンテキストを更新
+      startStopBtn_text.textContent = "START"; // ボタンテキストを更新
     }
   }
   
@@ -202,7 +202,7 @@ let interval = null; // カウントダウン用のインターバルID
   }
 
   // イベントリスナーの登録
-  startStopButton.addEventListener("click", startStopTimer);
+  startStopBtn.addEventListener("click", startStopTimer);
   deleteButton.addEventListener("click", resetTimer);
   adjustButtons.forEach((button) => button.addEventListener("click", adjustTime));
   adjustSelects.forEach((button) => button.addEventListener("click", setTime));

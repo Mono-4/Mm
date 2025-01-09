@@ -171,7 +171,11 @@ body {
   box-shadow: var(--box-shadow-value);
 }
 
-#start-stop-text,.adjust-btn-text {
+#start-stop-btn-text{
+  transform: translate(0.2rem, 0);
+  text-align: center;
+}
+.adjust-btn-text {
   transform: translate(0.15rem, 0);
 }
 .adjust-btn-text {
