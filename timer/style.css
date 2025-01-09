@@ -24,7 +24,9 @@ body {
 }
 
 
-/* 時間追加ボタン＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+時間追加ボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 .adjust-buttons{
   display: flex;
   justify-content: center;
@@ -38,7 +40,6 @@ body {
     background: rgb(228, 228, 228);
     text-align: center;
   }
-  /* 時間選択＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
   .adjust-select-buttons{
     display: flex;
     justify-content: center;
@@ -284,14 +285,11 @@ body.dark-mode {
   position: fixed;
   display: flex; 
   flex-direction: column; 
-  /* 縦方向に並べる */
   justify-content: space-between;
   align-items: flex-start;
-  /* 左寄せに配置（必要に応じて変更） */
   background: var(--trans-white);
   box-shadow: var(--box-shadow-sidebar);
   height: 100vh;
-
 }
 
 .sidebar-top {
@@ -300,8 +298,6 @@ body.dark-mode {
   gap: 50px;
   flex-direction: column;
 }
-
-
 
 #sidebar.active {
   right: 0;
