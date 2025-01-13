@@ -22,6 +22,14 @@ body {
   font-weight: 300;
   flex: none;
 }
+.jump{
+  position: fixed;
+  bottom:8px;
+  left:8px;
+  display: flex;
+  gap:10px;
+  font-size: 0.8rem;
+}
 
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 ロゴ、タイトル
