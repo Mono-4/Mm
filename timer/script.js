@@ -15,7 +15,6 @@ const display = document.getElementById("stopwatch-display");
 const startStopBtn = document.getElementById("start-stop-btn");
 const startStopBtn_text = document.getElementById("start-stop-btn-text");
 
-
 const deleteBtn = document.getElementById("delete-btn");
 
 const fontSizeSlider = document.getElementById("font-size-slider");
@@ -49,12 +48,6 @@ let selectedFont=0;
   document.body.style.backgroundColor = stopBgColorPicker.value; 
   document.body.classList.remove("dark-mode"); 
   // 要素の取得
-  const timeElements = {
-    hours: document.getElementById("timeH"),
-    minutes: document.getElementById("timeM"),
-    seconds: document.getElementById("timeS"),
-    tens: document.getElementById("timeT"),
-  };
   const shortcutKeyMap = {
     J: "3600000", // +1h
     K: "600000",  // +10min
@@ -86,18 +79,14 @@ let selectedFont=0;
   });
 
   function updateDisplay() {
-    
-    const hours = Math.floor(totalMilliseconds / 3600000);
-    const minutes = Math.floor((totalMilliseconds % 3600000) / 60000);
-    const seconds = Math.floor((totalMilliseconds % 60000) / 1000);
-    const tens = Math.floor((totalMilliseconds % 1000) / 10);
-  
-    timeElements.hours.textContent = String(hours).padStart(2, "0");
-    timeElements.minutes.textContent = String(minutes).padStart(2, "0");
-    timeElements.seconds.textContent = String(seconds).padStart(2, "0");
-    timeElements.tens.textContent = String(tens).padStart(2, "0");
+    // const totalSeconds = Math.floor(totalMilliseconds / 1000);
+    const hours = String(Math.floor(totalMilliseconds / 3600000)).padStart(2, "0");
+    const minutes = String(Math.floor((totalMilliseconds % 3600000) / 60000)).padStart(2, "0");
+    const seconds = String(Math.floor((totalMilliseconds % 60000) / 1000)).padStart(2, "0");
+    const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
 
-    document.title = `${String(hours).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`; // タブに時間を表示
+    // document.title = `${String(hours).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`; // タブに時間を表示
+    document.title = `${hours}:${minutes}:${seconds}`; // タブに時間を表示
 
     // deleteボタンの表示・非表示
     if (!running && totalMilliseconds > 0) {
@@ -119,16 +108,6 @@ let selectedFont=0;
     const displayValue = running ? "none" : "block";
     adjustButtonsText.forEach((button) => (button.style.display = displayValue));
     adjustSelects.forEach((button) => (button.style.display = displayValue));
-
-    updateFont();
-  }
-
-  function updateFont() {
-    const totalSeconds = Math.floor(totalMilliseconds / 1000);
-    const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
-    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-    const seconds = String(totalSeconds % 60).padStart(2, "0");
-    const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
   
     // フォントフォルダに基づいて画像を更新
     document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
@@ -141,6 +120,7 @@ let selectedFont=0;
     document.getElementById("timeS2").src = `../images/font${selectedFont}/${seconds[1]}.png`;
     document.getElementById("timeT2").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
   }
+
   
   function startStopTimer() {
     display.classList.remove("move");
@@ -401,6 +381,6 @@ fontSizeSlider.addEventListener("input", (e) => {
 fontSelector.addEventListener("change", function(event) {
   selectedFont = event.target.value; // セレクターで選ばれたフォント
   // updateFont(selectedFont); // フォントを変更
-  updateFont();
+  updateDisplay();
 });
 
