@@ -108,16 +108,16 @@ function updateDisplay(time) {
   document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
 
   // 各時間部分を画像に変更（1桁ずつ対応）
-  timeH.src = `../images/num${hours[0]}.png`;
-  timeM.src = `../images/num${minutes[0]}.png`;
-  timeS.src = `../images/num${seconds[0]}.png`;
-  timeT.src = `../images/num${tenthsOfMilliseconds[0]}.png`;
+  timeH.src = `../images/font0/${hours[0]}.png`;
+  timeM.src = `../images/font0/${minutes[0]}.png`;
+  timeS.src = `../images/font0/${seconds[0]}.png`;
+  timeT.src = `../images/font0/${tenthsOfMilliseconds[0]}.png`;
 
   // 二桁目の数字を対応する画像に設定
-  timeH2.src = `../images/num${hours[1]}.png`;
-  timeM2.src = `../images/num${minutes[1]}.png`;
-  timeS2.src = `../images/num${seconds[1]}.png`;
-  timeT2.src = `../images/num${tenthsOfMilliseconds[1]}.png`;
+  timeH2.src = `../images/font0/${hours[1]}.png`;
+  timeM2.src = `../images/font0/${minutes[1]}.png`;
+  timeS2.src = `../images/font0/${seconds[1]}.png`;
+  timeT2.src = `../images/font0/${tenthsOfMilliseconds[1]}.png`;
 }
 
 
