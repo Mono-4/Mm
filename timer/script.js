@@ -96,7 +96,7 @@ let selectedFont=0;
     timeElements.minutes.textContent = String(minutes).padStart(2, "0");
     timeElements.seconds.textContent = String(seconds).padStart(2, "0");
     timeElements.tens.textContent = String(tens).padStart(2, "0");
-  
+
     document.title = `${String(hours).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`; // タブに時間を表示
 
     // deleteボタンの表示・非表示
@@ -124,15 +124,11 @@ let selectedFont=0;
   }
 
   function updateFont() {
-    // const totalMilliseconds = Math.floor(ela);
     const totalSeconds = Math.floor(totalMilliseconds / 1000);
     const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
     const seconds = String(totalSeconds % 60).padStart(2, "0");
     const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
-  
-    // タイトルに時間を表示
-    document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
   
     // フォントフォルダに基づいて画像を更新
     document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
