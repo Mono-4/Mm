@@ -10,6 +10,9 @@
   --gray-ori: rgba(240,240,240,1);
 }
 
+img {
+  width:40px;
+}
 @font-face {
   font-family: 'font1';
   src: url('../font/font1.otf') format('woff2');
@@ -446,8 +449,6 @@ select {
 .font10{
   font-family: 'font10', sans-serif;
 }
-
-
 
 
 

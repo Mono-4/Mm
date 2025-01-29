@@ -90,6 +90,12 @@ deleteBtn.addEventListener("click", () => {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ディスプレイ更新
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ストップウォッチのディスプレイ更新
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ストップウォッチのディスプレイ更新
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 function updateDisplay(time) {
   const totalMilliseconds = Math.floor(time);
   const totalSeconds = Math.floor(totalMilliseconds / 1000);
@@ -98,13 +104,23 @@ function updateDisplay(time) {
   const seconds = String(totalSeconds % 60).padStart(2, "0");
   const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
 
-  document.title = `${String(hours).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`; // タブに時間を表示
+  // タイトルに時間を表示
+  document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
 
-  timeH.textContent = `${String(hours).padStart(2, "0")}`;
-  timeM.textContent = `${String(minutes % 60).padStart(2, "0")}`;
-  timeS.textContent = `${String(seconds).padStart(2, "0")}`;
-  timeT.textContent = `${String(tenthsOfMilliseconds).padStart(2, "0")}`;
+  // 各時間部分を画像に変更（1桁ずつ対応）
+  timeH.src = `../images/num${hours[0]}.png`;
+  timeM.src = `../images/num${minutes[0]}.png`;
+  timeS.src = `../images/num${seconds[0]}.png`;
+  timeT.src = `../images/num${tenthsOfMilliseconds[0]}.png`;
+
+  // 二桁目の数字を対応する画像に設定
+  timeH2.src = `../images/num${hours[1]}.png`;
+  timeM2.src = `../images/num${minutes[1]}.png`;
+  timeS2.src = `../images/num${seconds[1]}.png`;
+  timeT2.src = `../images/num${tenthsOfMilliseconds[1]}.png`;
 }
+
+
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // 背景色のリアルタイム変更
@@ -239,16 +255,66 @@ function playAudio(audioElement) {
   }
   audioElement.play();
 }
+// 数字を画像に置き換える関数
+function updateDisplayWithImages(time) {
+  const totalMilliseconds = Math.floor(time);
+  const totalSeconds = Math.floor(totalMilliseconds / 1000);
+  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+  const seconds = String(totalSeconds % 60).padStart(2, "0");
+  const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
+
+  // 各部分の要素を画像に変換
+  updateTimeWithImage(timeH, hours);
+  updateTimeWithImage(timeM, minutes);
+  updateTimeWithImage(timeS, seconds);
+  updateTimeWithImage(timeT, tenthsOfMilliseconds);
+}
+
+// 時間、分、秒、10分秒の表示を画像に変換する関数
+function updateTimeWithImage(element, timeString) {
+  // まず子要素をクリア
+  element.innerHTML = '';
+
+  // 各数字に対応する画像を挿入
+  for (let i = 0; i < timeString.length; i++) {
+    const digit = timeString[i];
+    const img = document.createElement('img');
+    img.src = `num${digit}.png`; // num0.png 〜 num9.png を読み込む
+    img.alt = digit;
+    img.classList.add('digit-image');
+    element.appendChild(img);
+  }
+}
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // フォントサイズ調整
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// fontSizeSlider.addEventListener("input", (e) => {
+//   timeH.style.fontSize = `${e.target.value}rem`;
+//   timeM.style.fontSize = `${e.target.value}rem`;
+//   timeS.style.fontSize = `${e.target.value}rem`;
+//   timeT.style.fontSize = `${e.target.value}rem`;
+//   dividers.forEach(divider => {
+//     divider.style.fontSize = `${e.target.value}rem`;
+//   });
+// });
+
 fontSizeSlider.addEventListener("input", (e) => {
-  timeH.style.fontSize = `${e.target.value}rem`;
-  timeM.style.fontSize = `${e.target.value}rem`;
-  timeS.style.fontSize = `${e.target.value}rem`;
-  timeT.style.fontSize = `${e.target.value}rem`;
+  const newSize = `${e.target.value * 10}px`; // スケールに応じたサイズ
+  timeH.style.width = newSize;
+  timeH2.style.width = newSize;
+  timeM.style.width = newSize;
+  timeM2.style.width = newSize;
+  timeS.style.width = newSize;
+  timeS2.style.width = newSize;
+  timeT.style.width = newSize;
+  timeT2.style.width = newSize;
+
   dividers.forEach(divider => {
     divider.style.fontSize = `${e.target.value}rem`;
   });
 });
+
+
+  
