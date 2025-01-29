@@ -234,15 +234,6 @@ document.addEventListener("keyup", (e) => {
 // フォント変更
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-fontSelector.addEventListener('change', (event) => {
-  const selectedIndex = event.target.selectedIndex;
-  const className = `font${selectedIndex}`;  // font+selectedIndexのクラス名を動的に生成
-  
-  // timeH, timeM, timeS, timeT に対してクラスを追加
-  [timeH, timeM, timeS, timeT].forEach(element => {
-    element.classList.add(className);
-  });
-});
 
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -317,4 +308,52 @@ fontSizeSlider.addEventListener("input", (e) => {
 });
 
 
-  
+// 時間の数字に対応する画像を更新する関数
+function updateTimeWithImage(element, fontFolder, timeString) {
+  // 既存の内容を削除
+  element.innerHTML = '';
+
+  // 各数字に対応する画像を挿入
+  for (let i = 0; i < timeString.length; i++) {
+    const digit = timeString[i];
+    const img = document.createElement('img');
+    
+    // 画像のソースを指定
+    img.src = `../images/${fontFolder}/${digit}.png`;  // 選択したフォントフォルダ内の画像を指定
+    
+    // 画像をエレメントに追加
+    element.appendChild(img);
+  }
+}
+
+// フォントを変更するセレクターの値を取得して表示する関数
+function updateFont(fontFolder) {
+  const totalMilliseconds = Math.floor(elapsedTime);
+  const totalSeconds = Math.floor(totalMilliseconds / 1000);
+  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+  const seconds = String(totalSeconds % 60).padStart(2, "0");
+  const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
+
+  // タイトルに時間を表示
+  document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
+
+  // フォントフォルダに基づいて画像を更新
+  document.getElementById("timeH").src = `../images/font${fontFolder}/${hours[0]}.png`;
+  document.getElementById("timeM").src = `../images/font${fontFolder}/${minutes[0]}.png`;
+  document.getElementById("timeS").src = `../images/font${fontFolder}/${seconds[0]}.png`;
+  document.getElementById("timeT").src = `../images/font${fontFolder}/${tenthsOfMilliseconds[0]}.png`;
+
+  document.getElementById("timeH2").src = `../images/font${fontFolder}/${hours[1]}.png`;
+  document.getElementById("timeM2").src = `../images/font${fontFolder}/${minutes[1]}.png`;
+  document.getElementById("timeS2").src = `../images/font${fontFolder}/${seconds[1]}.png`;
+  document.getElementById("timeT2").src = `../images/font${fontFolder}/${tenthsOfMilliseconds[1]}.png`;
+}
+
+// セレクターの変更を検知してフォントを変更する
+fontSelector.addEventListener("change", function(event) {
+  const selectedFont = event.target.value; // セレクターで選ばれたフォント
+  updateFont(selectedFont); // フォントを変更
+});
+
+
