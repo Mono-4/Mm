@@ -10,7 +10,10 @@
   --gray-ori: rgba(240,240,240,1);
 }
 
-@font-face {
+img {
+  width:40px;
+}
+/* @font-face {
   font-family: 'font1';
   src: url('../font/font1.otf') format('woff2');
 }
@@ -50,7 +53,7 @@
   font-family: 'font10';
   src: url('../font/font10.otf') format('woff2');
 }
-
+ */
 
 html{
   font-size: 24px; /* 基本フォントサイズ */
@@ -406,7 +409,7 @@ select {
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 フォント選択
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
-.font0{
+/* .font0{
   font-family: 'Noto Sans', sans-serif;
 }
 .font1{
@@ -437,7 +440,7 @@ select {
 }
 .font8{
   font-family: 'font8', sans-serif;
-}
+} */
 
 .font9{
   font-family: 'font9', sans-serif;
@@ -446,8 +449,6 @@ select {
 .font10{
   font-family: 'font10', sans-serif;
 }
-
-
 
 
 

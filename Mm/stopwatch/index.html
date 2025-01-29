@@ -24,46 +24,31 @@
   <div class="container">
     <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
     ディスプレイ 
-    
     ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
-    <!-- ストップウォッチディスプレイ -->
     <div class="stopwatch-display" id="stopwatch-display">
       <div class="time">
         <div class="time-box">
-          <div class="timeimages">
-            <img id="timeH" src="../images/font0/0.png" alt="00">
-            <img id="timeH2" src="../images/font0/0.png" alt="00">
-          </div> 
+          <div id="timeH">00</div>
           <div class="unit">hour</div>
         </div>
         <div id="divider">:</div>
         <div class="time-box">
-          <div class="timeimages">
-          <img id="timeM" src="../images/font0/0.png" alt="00">
-          <img id="timeM2" src="../images/font0/0.png" alt="00">
-        </div> 
+          <div id="timeM">00</div>
           <div class="unit">min</div>
         </div>
         <div id="divider">:</div>
         <div class="time-box">
-          <div class="timeimages">
-          <img id="timeS" src="../images/font0/0.png" alt="00">
-          <img id="timeS2" src="../images/font0/0.png" alt="00">
-        </div> 
+          <div id="timeS">00</div>
           <div class="unit">sec</div>
         </div>
         <div id="divider">:</div>
         <div class="time-box">
-          <div class="timeimages">
-          <img id="timeT" src="../images/font0/0.png" alt="00">
-          <img id="timeT2" src="../images/font0/0.png" alt="00">
-        </div> 
+          <div id="timeT">00</div>
           <div class="unit">10sec</div>
         </div>
       </div>
       <button id="delete-btn" class="delete-btn">reset</button>
     </div>
-
     <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
     START、STOPボタン 
     ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
@@ -84,12 +69,18 @@
       <!--フォントカテゴリー ============================= -->
       <label for="font-size-slider">Fot category</label>
       <select id="fontSelector">
-        <option value="0">font 0</option>
-        <option value="1">font 1</option>
-        <option value="2">font 2</option>
-        <!-- 必要なフォントを追加 -->
+        <option >noto sans</option>
+        <option >1</option>
+        <option >2</option>
+        <option >3</option>
+        <option >4</option>
+        <option >5</option>
+        <option >6</option>
+        <option >7</option>
+        <option >8</option>
+        <option >9</option>
+        <option >10</option>
       </select>
-      
       <div class="control-section">
         <label for="font-size-slider">Font Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
