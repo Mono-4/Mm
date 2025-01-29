@@ -91,8 +91,9 @@ deleteBtn.addEventListener("click", () => {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ストップウォッチのディスプレイ更新
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-function updateDisplay(time) {
-  const totalMilliseconds = Math.floor(time);
+
+function updateDisplay() {
+  const totalMilliseconds = Math.floor(elapsedTime);
   const totalSeconds = Math.floor(totalMilliseconds / 1000);
   const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
   const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
@@ -102,21 +103,17 @@ function updateDisplay(time) {
   // タイトルに時間を表示
   document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
 
-  updateFont(selectedFont);
-  // 各時間部分を画像に変更（1桁ずつ対応）
-//   timeH.src = `../images/font0/${hours[0]}.png`;
-//   timeM.src = `../images/font0/${minutes[0]}.png`;
-//   timeS.src = `../images/font0/${seconds[0]}.png`;
-//   timeT.src = `../images/font0/${tenthsOfMilliseconds[0]}.png`;
+  // フォントフォルダに基づいて画像を更新
+  document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
+  document.getElementById("timeM").src = `../images/font${selectedFont}/${minutes[0]}.png`;
+  document.getElementById("timeS").src = `../images/font${selectedFont}/${seconds[0]}.png`;
+  document.getElementById("timeT").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
 
-//   // 二桁目の数字を対応する画像に設定
-//   timeH2.src = `../images/font0/${hours[1]}.png`;
-//   timeM2.src = `../images/font0/${minutes[1]}.png`;
-//   timeS2.src = `../images/font0/${seconds[1]}.png`;
-//   timeT2.src = `../images/font0/${tenthsOfMilliseconds[1]}.png`;
-// }
+  document.getElementById("timeH2").src = `../images/font${selectedFont}/${hours[1]}.png`;
+  document.getElementById("timeM2").src = `../images/font${selectedFont}/${minutes[1]}.png`;
+  document.getElementById("timeS2").src = `../images/font${selectedFont}/${seconds[1]}.png`;
+  document.getElementById("timeT2").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
 }
-
 
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -272,26 +269,3 @@ fontSelector.addEventListener("change", function(event) {
   // updateFont(selectedFont); // フォントを変更
   updateFont(selectedFont);
 });
-
-function updateFont(fontFolder) {
-  const totalMilliseconds = Math.floor(elapsedTime);
-  const totalSeconds = Math.floor(totalMilliseconds / 1000);
-  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
-  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-  const seconds = String(totalSeconds % 60).padStart(2, "0");
-  const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
-
-  // タイトルに時間を表示
-  document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
-
-  // フォントフォルダに基づいて画像を更新
-  document.getElementById("timeH").src = `../images/font${fontFolder}/${hours[0]}.png`;
-  document.getElementById("timeM").src = `../images/font${fontFolder}/${minutes[0]}.png`;
-  document.getElementById("timeS").src = `../images/font${fontFolder}/${seconds[0]}.png`;
-  document.getElementById("timeT").src = `../images/font${fontFolder}/${tenthsOfMilliseconds[0]}.png`;
-
-  document.getElementById("timeH2").src = `../images/font${fontFolder}/${hours[1]}.png`;
-  document.getElementById("timeM2").src = `../images/font${fontFolder}/${minutes[1]}.png`;
-  document.getElementById("timeS2").src = `../images/font${fontFolder}/${seconds[1]}.png`;
-  document.getElementById("timeT2").src = `../images/font${fontFolder}/${tenthsOfMilliseconds[1]}.png`;
-}

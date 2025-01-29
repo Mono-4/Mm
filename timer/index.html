@@ -28,28 +28,41 @@
     <div class="stopwatch-display" id="stopwatch-display">
       <div class="time">
         <div class="time-box">
-          <div id="timeH">00</div>
+          <div class="timeimages">
+            <img id="timeH" src="../images/font0/0.png" alt="00">
+            <img id="timeH2" src="../images/font0/0.png" alt="00">
+          </div> 
           <div class="unit">hour</div>
         </div>
-        <div id="divider">:</div>
+        <!-- <div id="divider">:</div> -->
         <div class="time-box">
-          <div id="timeM">00</div>
+          <div class="timeimages">
+          <img id="timeM" src="../images/font0/0.png" alt="00">
+          <img id="timeM2" src="../images/font0/0.png" alt="00">
+        </div> 
           <div class="unit">min</div>
         </div>
-        <div id="divider">:</div>
+        <!-- <div id="divider">:</div> -->
         <div class="time-box">
-          <div id="timeS">00</div>
+          <div class="timeimages">
+          <img id="timeS" src="../images/font0/0.png" alt="00">
+          <img id="timeS2" src="../images/font0/0.png" alt="00">
+        </div> 
           <div class="unit">sec</div>
         </div>
-        <div id="divider">:</div>
+        <!-- <div id="divider">:</div> -->
         <div class="time-box">
-          <div id="timeT">00</div>
+          <div class="timeimages">
+          <img id="timeT" src="../images/font0/0.png" alt="00">
+          <img id="timeT2" src="../images/font0/0.png" alt="00">
+        </div> 
           <div class="unit">10sec</div>
         </div>
       </div>
-      
       <button id="delete-btn" class="delete-btn">reset</button>
     </div>
+
+
     <div class="adjust-buttons">
       <div class="start-btn-area">
         <button class="adjust-btn" data-time="3600000">
@@ -97,8 +110,23 @@
   <div class="sidebar" id="sidebar">
 
     <div class="sidebar-top">
+      
       <!--フォントサイズ ============================= -->
       <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button>
+      <label for="font-size-slider">Fot category</label>
+      <select id="fontSelector">
+        <option value="0">font 0</option>
+        <option value="1">font 1</option>
+        <option value="2">font 2</option>
+        <option value="3">font 3</option>
+        <option value="4">font 4</option>
+        <option value="5">font 5</option>
+        <option value="6">font 6</option>
+        <option value="7">font 7</option>
+        <option value="8">font 8</option>
+        <option value="9">font 9</option>
+        <option value="10">font 10</option>
+      </select>
       <div class="control-section">
         <label for="font-size-slider">Font Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="2.5">

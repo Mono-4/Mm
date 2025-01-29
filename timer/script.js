@@ -15,6 +15,7 @@ const display = document.getElementById("stopwatch-display");
 const startStopBtn = document.getElementById("start-stop-btn");
 const startStopBtn_text = document.getElementById("start-stop-btn-text");
 
+
 const deleteBtn = document.getElementById("delete-btn");
 
 const fontSizeSlider = document.getElementById("font-size-slider");
@@ -40,7 +41,7 @@ const adjustSelects = document.querySelectorAll(".adjust-select-btn"); // 時間
 
 let totalMilliseconds = 0; // タイマーの合計時間（ミリ秒単位）
 let interval = null; // カウントダウン用のインターバルID
-
+let selectedFont=0;
 
 
   // タイマーの表示を更新
@@ -118,7 +119,33 @@ let interval = null; // カウントダウン用のインターバルID
     const displayValue = running ? "none" : "block";
     adjustButtonsText.forEach((button) => (button.style.display = displayValue));
     adjustSelects.forEach((button) => (button.style.display = displayValue));
+
+    updateFont();
   }
+
+  function updateFont() {
+    // const totalMilliseconds = Math.floor(ela);
+    const totalSeconds = Math.floor(totalMilliseconds / 1000);
+    const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
+    const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
+  
+    // タイトルに時間を表示
+    document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
+  
+    // フォントフォルダに基づいて画像を更新
+    document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
+    document.getElementById("timeM").src = `../images/font${selectedFont}/${minutes[0]}.png`;
+    document.getElementById("timeS").src = `../images/font${selectedFont}/${seconds[0]}.png`;
+    document.getElementById("timeT").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
+  
+    document.getElementById("timeH2").src = `../images/font${selectedFont}/${hours[1]}.png`;
+    document.getElementById("timeM2").src = `../images/font${selectedFont}/${minutes[1]}.png`;
+    document.getElementById("timeS2").src = `../images/font${selectedFont}/${seconds[1]}.png`;
+    document.getElementById("timeT2").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
+  }
+  
   function startStopTimer() {
     display.classList.remove("move");
     if (running) {
@@ -357,11 +384,27 @@ function playAudio(audioElement) {
 // フォントサイズ調整
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 fontSizeSlider.addEventListener("input", (e) => {
-  timeH.style.fontSize = `${e.target.value}rem`;
-  timeM.style.fontSize = `${e.target.value}rem`;
-  timeS.style.fontSize = `${e.target.value}rem`;
-  timeT.style.fontSize = `${e.target.value}rem`;
+  const newSize = `${e.target.value * 10}px`; // スケールに応じたサイズ
+  timeH.style.width = newSize;
+  timeH2.style.width = newSize;
+  timeM.style.width = newSize;
+  timeM2.style.width = newSize;
+  timeS.style.width = newSize;
+  timeS2.style.width = newSize;
+  timeT.style.width = newSize;
+  timeT2.style.width = newSize;
+
   dividers.forEach(divider => {
     divider.style.fontSize = `${e.target.value}rem`;
   });
 });
+
+
+
+
+fontSelector.addEventListener("change", function(event) {
+  selectedFont = event.target.value; // セレクターで選ばれたフォント
+  // updateFont(selectedFont); // フォントを変更
+  updateFont();
+});
+
