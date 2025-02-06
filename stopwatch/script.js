@@ -174,14 +174,15 @@ function getLuminance(color) {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // サイドバーの表示非表示
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-function toggleSidebar() {
-  playAudio(swipe_audio);
-  sidebar.classList.toggle("active");
-  sidebarShowBtn.classList.toggle("disable");
-}
+sidebar.classList.toggle("active");
+// function toggleSidebar() {
+//   playAudio(swipe_audio);
+//   sidebar.classList.toggle("active");
+//   sidebarShowBtn.classList.toggle("disable");
+// }
 
-sidebarShowBtn.addEventListener("click", toggleSidebar);
-sidebarCloseBtn.addEventListener("click", toggleSidebar);
+// sidebarShowBtn.addEventListener("click", toggleSidebar);
+// sidebarCloseBtn.addEventListener("click", toggleSidebar);
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // キー入力でボタン操作
@@ -224,9 +225,6 @@ document.addEventListener("keyup", (e) => {
 });
 
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-// フォント変更
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 
 
@@ -267,5 +265,5 @@ fontSizeSlider.addEventListener("input", (e) => {
 fontSelector.addEventListener("change", function(event) {
   selectedFont = event.target.value; // セレクターで選ばれたフォント
   // updateFont(selectedFont); // フォントを変更
-  updateFont(selectedFont);
+  updateDisplay();
 });

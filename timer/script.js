@@ -16,7 +16,7 @@ const startStopBtn = document.getElementById("start-stop-btn");
 const startStopBtn_text = document.getElementById("start-stop-btn-text");
 
 const deleteBtn = document.getElementById("delete-btn");
-
+ 
 const fontSizeSlider = document.getElementById("font-size-slider");
 const stopBgColorPicker = document.getElementById("stop-bg-color");
 const countBgColorPicker = document.getElementById("count-bg-color");
@@ -274,14 +274,15 @@ function getLuminance(color) {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // サイドバーの表示非表示
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-function toggleSidebar() {
-  playAudio(swipe_audio);
-  sidebar.classList.toggle("active");
-  sidebarShowBtn.classList.toggle("disable");
-}
+sidebar.classList.toggle("active");
+// function toggleSidebar() {
+//   playAudio(swipe_audio);
+//   sidebar.classList.toggle("active");
+//   sidebarShowBtn.classList.toggle("disable");
+// }
 
-sidebarShowBtn.addEventListener("click", toggleSidebar);
-sidebarCloseBtn.addEventListener("click", toggleSidebar);
+// sidebarShowBtn.addEventListener("click", toggleSidebar);
+// sidebarCloseBtn.addEventListener("click", toggleSidebar);
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // キー入力でボタン操作

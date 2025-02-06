@@ -25,7 +25,13 @@ body {
 
 img {
   width:40px;
+  /* display: inline-block; */
 }
+.timeimages{
+  display: flex;
+  gap:10px;
+}
+
 .jump{
   position: fixed;
   bottom:8px;
@@ -289,7 +295,7 @@ body.dark-mode {
   transition: right 1s ease;
   /* スムーズなアニメーション */
   font-size: 0.8rem;
-  padding: 0 30px 40px 30px;
+  padding: 40px 30px 40px 30px;
   gap: 40px;
   width: 250px;
   position: fixed;
