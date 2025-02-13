@@ -11,15 +11,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="jump">
-    <a href="../stopwatch/index.html">Stopwatch</a>
-    <span>/</span>
-    <a href="../memo/index.html">Memo</a>
-  </div>
+  
 
   <div class="container">
     <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -113,39 +110,42 @@
       
       <!--フォントサイズ ============================= -->
       <!-- <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button> -->
-      <label for="font-size-slider">Fot category</label>
-      <select id="fontSelector">
-        <option value="0">Noto sans</option>
-        <option value="1">缶</option>
-        <option value="2">キーボード</option>
-        <option value="3">ペットボトル</option>
-        <option value="4">本</option>
-        <option value="5">コード</option>
-        <option value="6">枝</option>
-        <option value="7">葉</option>
-        <option value="8">鏡</option>
-        <option value="9">レコード</option>
-        <option value="10">点字ブロック</option>
-      </select>
       <div class="control-section">
-        <label for="font-size-slider">Font Size</label>
+        <label for="font-size-slider">フォント Font</label>
+        <select id="fontSelector">
+          <option value="0">デフォルト</option>
+          <option value="1">缶</option>
+          <option value="2">ペットボトル</option>
+          <option value="3">鏡</option>
+          <option value="4">キーボード</option>
+          <option value="5">コード</option>
+          <option value="6">レコード</option>
+          <option value="7">本</option>
+          <option value="8">ガムテープ</option>
+          <option value="9">枝</option>
+          <option value="10">葉</option>
+        </select>
+      </div>
+      <div class="control-section">
+        <label for="font-size-slider">サイズ Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
       </div>
       <!--背景色（デフォルト指定） ============================= -->
       <div class="control-section">
-        <label for="stop-bg-color">BG when stopped </label>
+        <label for="stop-bg-color">停止時背景<br>BG when stopped </label>
         <input type="color" id="stop-bg-color" value="#cccccf">
       </div>
       <div class="control-section">
-        <label for="count-bg-color">BG when counting</label>
+        <label for="count-bg-color">カウント時背景<br>BG when counting</label>
         <input type="color" id="count-bg-color" value="#f0f0f0">
       </div>
     </div>
     <div class="sidebar-bottom">
       <!--タイトル、ロゴ、クレジット ============================= -->
       <div class="title-section">
-        <img class="logo" src="fabi.png" alt="">
-        <h1 class="titile">Timer</h1>
+        <img class="logo" src="../images/fabi/fabi.png" alt="">
+        <a href="../clock/index.html">Clock</a>
+        <a href="../stopwatch/index.html">Stopwatch</a>
       </div>
     </div>
   </div>
