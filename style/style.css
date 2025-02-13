@@ -24,6 +24,25 @@ body {
 }
 
 
+img {
+  width:40px;
+  /* display: inline-block; */
+}
+.timeimages{
+  display: flex;
+  gap:10px;
+}
+
+.jump{
+  position: fixed;
+  bottom:8px;
+  left:8px;
+  display: flex;
+  gap:10px;
+  font-size: 0.8rem;
+}
+
+
 /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 ダークモード
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
@@ -182,4 +201,119 @@ select {
   text-align: center;
   padding: 4px;
   border-radius: 100px;
+}
+
+
+.title-section{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.stopwatch-display {
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 0.5rem;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+
+.time-box {
+  display: flex;
+  font-size: 2.5rem;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+/* 単位＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.unit {
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  /* transform: translate(-0.3rem); */
+}
+
+
+
+
+
+/* リセット時のアニメーション＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+#stopwatch-display.move {
+  position: relative;
+  animation: moveLeft 0.2s forwards;
+}
+
+@keyframes moveLeft {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: -40px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+リセットボタン
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+.delete-btn {
+  font-size: 1rem;
+  visibility: hidden;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 60px;
+  letter-spacing: 0.2rem;
+  margin-top: 50px;
+  transform: translate(0.2rem,0);
+  font-weight: 200;
+}
+@media (max-width: 600px) {
+  .time {
+    flex-direction: column;
+    gap:40px;
+  }
+  .container{
+    gap:100px;
+  }
+  .time-box{
+    gap:10px;
+  }
+  .delete-btn{
+    transform: translate(-0.3rem,0);
+  }
+  #divider{
+    display: none;
+  }
 }

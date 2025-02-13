@@ -63,11 +63,6 @@
     <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
     START、STOPボタン 
     ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
-    <div class="start-btn-area">
-      <button id="start-stop-btn" class="start-stop-btn">
-        <div id="start-stop-text">START</div>
-      </button>
-    </div>
   </div>
   <!-- /* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   サイドバー
@@ -78,7 +73,7 @@
       <!-- <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button> -->
 
       <!--フォントカテゴリー ============================= -->
-      <label for="font-size-slider">Fot category</label>
+      <label for="font-size-slider">フォント</label>
       <select id="fontSelector">
         <option value="0">Noto sans</option>
         <option value="1">缶</option>
@@ -94,28 +89,16 @@
       </select>
       
       <div class="control-section">
-        <label for="font-size-slider">Font Size</label>
+        <label for="font-size-slider">サイズ Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
       </div>
       <!--背景色（デフォルト指定） ============================= -->
       <div class="control-section">
-        <label for="stop-bg-color">BG when stopped </label>
+        <label for="stop-bg-color">背景 BG</label>
         <input type="color" id="stop-bg-color" value="#cccccf">
       </div>
-      <div class="control-section">
-        <label for="count-bg-color">BG when counting</label>
-        <input type="color" id="count-bg-color" value="#f0f0f0">
-      </div>
-      <!--ショートカット ============================= -->
-      <div class="control-section">
-        <label for="count-bg-color">Shortcuts</label>
-        <div class="shortcut">Space, delete/back space
-        </div>
-      </div>
-    </div>
     <div class="sidebar-bottom">
       <!--タイトル、ロゴ、クレジット ============================= -->
-     
       <div class="title-section">
         <img class="logo" src="../images/fabi/fabi.png" alt="">
         <a href="../timer/index.html">Timer</a>
