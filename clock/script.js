@@ -91,14 +91,21 @@ deleteBtn.addEventListener("click", () => {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ストップウォッチのディスプレイ更新
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
+setInterval(updateDisplay, 100);
 function updateDisplay() {
-  const totalMilliseconds = Math.floor(elapsedTime);
-  const totalSeconds = Math.floor(totalMilliseconds / 1000);
-  const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
-  const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-  const seconds = String(totalSeconds % 60).padStart(2, "0");
-  const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
+
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+  const seconds = String(now.getSeconds()).padStart(2, "0");
+  const tenthsOfMilliseconds = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, "0");
+  
+  // const totalMilliseconds = Math.floor(elapsedTime);
+  // const totalSeconds = Math.floor(totalMilliseconds / 1000);
+  // const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+  // const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+  // const seconds = String(totalSeconds % 60).padStart(2, "0");
+  // const tenthsOfMilliseconds = String(Math.floor((totalMilliseconds % 1000) / 10)).padStart(2, "0");
 
   // タイトルに時間を表示
   document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
