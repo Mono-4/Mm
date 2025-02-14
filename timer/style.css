@@ -5,6 +5,7 @@
 .adjust-buttons{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap:20px;
 }
 
@@ -103,3 +104,11 @@
   height: 200px;
 }
 
+
+/* メディアクエリ */
+
+@media (max-width: 600px) {
+  .container{
+    width: calc(100vw - 150px);
+  } 
+}

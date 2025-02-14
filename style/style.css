@@ -143,6 +143,7 @@ label {
   opacity: 0.8;
   margin-top:10px;
 }
+
 /* フォントサイズ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 input[type="range"] {
   width: 150px;
@@ -312,25 +313,3 @@ select {
   font-weight: 300;
   color:var(--light-text);
 }
-@media (max-width: 600px) {
-  .time {
-    flex-direction: column;
-    gap:40px;
-  }
-  .container{
-    gap:100px;
-    width: calc(100vw - 250px);
-  }
-  .time-box{
-    gap:10px;
-  }
-  .delete-btn{
-    transform: translate(-0.3rem,0);
-  }
-  #divider{
-    display: none;
-  }
-}
-/* ================== */
-
-

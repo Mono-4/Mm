@@ -41,7 +41,6 @@ document.body.classList.remove("dark-mode"); // ダークモード無効化
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ストップウォッチのスタート/ストップ
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-deleteBtn.classList.add("visible"); 
 startStopBtn.addEventListener("click", () => {
     display.classList.remove("move");
     playAudio(audio0);

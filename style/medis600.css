@@ -1,0 +1,36 @@
+
+
+/* メディアクエリ */
+/* スマホサイズ（600px以下） */
+
+@media (max-width: 600px) {
+    html{
+      font-size: 20px; /* 基本フォントサイズ */
+    }
+    .container{
+      gap:10px;
+      width: calc(100vw - 150px);
+    }
+    .sidebar {
+      font-size: 0.8rem;
+      padding: 40px 8px 40px 8px;
+      gap: 40px;
+      width: 150px;
+    }
+    .stopwatch-display {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+      letter-spacing: 0.5rem;
+    }
+    .time {
+      flex-direction: column;
+      gap:40px;
+    }
+    .adjust-select-buttons{
+      display: none;
+    }
+    
+  }
+  
