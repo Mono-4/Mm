@@ -21,8 +21,11 @@
     justify-content: center;
     position: absolute;
     left:50%;
-    transform: translate(-50%);
+    transform: translate(-75%);
+    /* 修正 */
     bottom: 0;
+  /* width:calc(100vw - 150px); */
+
   }
   .adjust-select-btn{
     width: 100px;
@@ -111,4 +114,9 @@
   .container{
     width: calc(100vw - 150px);
   } 
+/* 
+  .adjust-select-buttons {
+    transform: translate(calc(150px/2));
+    margin-top:-100px ;
+  } */
 }
