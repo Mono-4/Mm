@@ -67,25 +67,26 @@
   <div class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <!-- <button class="sidebar-close-btn" id="sidebar-close-btn">＞</button> -->
-
       <!--フォントカテゴリー ============================= -->
-      <label for="font-size-slider">フォント</label>
-      <select id="fontSelector">
-        <option value="0">デフォルト Default</option>
-        <option value="1">アルミ缶 Aluminum cans </option>
-        <option value="2">ペットボトル Plastic bottles</option>
-        <option value="3">鏡 mirror</option>
-        <option value="4">キーボード Keyboards</option>
-        <option value="5">コード Cords</option>
-        <option value="6">レコード Records</option>
-        <option value="7">本 Books</option>
-        <option value="8">ガムテープ Duct tape</option>
-        <option value="9">枝 Branches</option>
-        <option value="10">葉 Leaves</option>
-      </select>
+      <div class="control-section">
+        <label for="font-size-slider">フォント Font</label>
+        <select id="fontSelector">
+          <option value="0">デフォルト Default</option>
+          <option value="1">アルミ缶 Aluminum cans </option>
+          <option value="2">ペットボトル Plastic bottles</option>
+          <option value="3">鏡 Mirror</option>
+          <option value="4">キーボード Keyboards</option>
+          <option value="5">コード Cords</option>
+          <option value="6">レコード Records</option>
+          <option value="7">本 Books</option>
+          <option value="8">ガムテープ Duct tape</option>
+          <option value="9">枝 Branches</option>
+          <option value="10">葉 Leaves</option>
+        </select>
+      </div>
       
       <div class="control-section">
-        <label for="font-size-slider">サイズ Size</label>
+        <label for="font-size-slider">文字サイズ Font Size</label>
         <input type="range" id="font-size-slider" min="2" max="10" value="7">
       </div>
       <!--背景色（デフォルト指定） ============================= -->
@@ -93,12 +94,14 @@
         <label for="stop-bg-color">背景 BG</label>
         <input type="color" id="stop-bg-color" value="#cccccf">
       </div>
+    </div>
     <div class="sidebar-bottom">
       <!--タイトル、ロゴ、クレジット ============================= -->
       <div class="title-section">
         <img class="logo" src="../images/logo/logo.png" alt="">
-        <a href="../timer/index.html">Timer</a>
+        <a class="a-bold" href="../clock/index.html">Clock</a>
         <a href="../stopwatch/index.html">Stopwatch</a>
+        <a href="../timer/index.html">Timer</a>
       </div>
     </div>
   </div>
