@@ -50,7 +50,7 @@ document.body.classList.remove("dark-mode"); // ダークモード無効化
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ストップウォッチのディスプレイ更新
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-setInterval(updateDisplay, 100);
+setInterval(updateDisplay, 10);
 function updateDisplay() {
 
   const now = new Date();
