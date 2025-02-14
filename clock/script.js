@@ -180,7 +180,7 @@ function playAudio(audioElement) {
 // フォントサイズ変更
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 fontSizeSlider.addEventListener("input", (e) => {
-  const newSize = `${e.target.value * 10}px`; // スケールに応じたサイズ
+  const newSize = `${e.target.value *0.5 }rem`;// スケールに応じたサイズ
   timeH.style.width = newSize;
   timeH2.style.width = newSize;
   timeM.style.width = newSize;

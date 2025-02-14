@@ -26,10 +26,29 @@
     }
     .time {
       flex-direction: column;
-      gap:40px;
+      gap:10px;
     }
     .adjust-select-buttons{
       display: none;
+    }
+    .start-btn-area {
+      width:110px;
+      height: 110px;
+    }
+    
+    #start-stop-btn,.adjust-btn {
+      width: 110px;
+      height: 110px;
+    }
+
+    #start-stop-btn:hover,.adjust-btn:hover{
+      width: 110px;
+      height: 110px;
+    }
+    .adjust-buttons{
+      justify-content: center;
+      flex-wrap: wrap;
+      /* gap:1px; */
     }
     
   }
