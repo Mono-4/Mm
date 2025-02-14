@@ -24,11 +24,7 @@ const fontSelector = document.getElementById('fontSelector');
 
 
 // 音声ファイル
-const start_audio = new Audio("../sound/0/start.wav");
-const stop_audio = new Audio("../sound/0/stop.wav");
-const delete_audio = new Audio("../sound/0/delete.wav");
-const swipe_audio = new Audio("../sound/0/swipe.wav");
-const tap_audio = new Audio("../sound/0/tap.wav");
+const audio0 = new Audio("../sound/0/start.wav");
 
 let running = false;
 let elapsedTime = 0;
@@ -45,9 +41,10 @@ document.body.classList.remove("dark-mode"); // ダークモード無効化
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // ストップウォッチのスタート/ストップ
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+deleteBtn.classList.add("visible"); 
 startStopBtn.addEventListener("click", () => {
     display.classList.remove("move");
-    playAudio(tap_audio);
+    playAudio(audio0);
     if (running) {
       clearInterval(interval);
       startStopBtn_text.textContent = "START";
@@ -62,9 +59,11 @@ startStopBtn.addEventListener("click", () => {
     running = !running;
 
     if(running){
+      console.log("running");
       deleteBtn.classList.remove("visible"); // 停止時にリセットボタンを表示
     }
     else{
+      console.log("else");
       deleteBtn.classList.add("visible"); // 停止時にリセットボタンを表示
     }
     // 文字の黒と白を入れ替え
@@ -76,7 +75,7 @@ startStopBtn.addEventListener("click", () => {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
 deleteBtn.addEventListener("click", () => {
-  playAudio(delete_audio);
+  playAudio(audio0);
 
   clearInterval(interval);
   display.classList.add("move");

@@ -24,11 +24,7 @@ const fontSelector = document.getElementById('fontSelector');
 
 
 // 音声ファイル
-const start_audio = new Audio("../sound/0/start.wav");
-const stop_audio = new Audio("../sound/0/stop.wav");
-const delete_audio = new Audio("../sound/0/delete.wav");
-const swipe_audio = new Audio("../sound/0/swipe.wav");
-const tap_audio = new Audio("../sound/0/tap.wav");
+const audio0 = new Audio("../sound/0/start.wav");
 
 let running = false;
 let elapsedTime = 0;

@@ -40,7 +40,7 @@
 
 .container {
 
-  gap: 50px;
+  gap: 100px;
   width: calc(100vw - 250px);
 
 }
@@ -58,7 +58,12 @@
 スタートボタン
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 .start-btn-area {
+  margin:0;
   width:200px;
+  height: 200px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #start-stop-btn,.adjust-btn {
@@ -70,6 +75,7 @@
   font-size: 1rem;
   letter-spacing: 0.5rem;
   box-shadow: var(--box-shadow-value);
+  border:var(--boder-value);
 }
 
 #start-stop-btn-text{
