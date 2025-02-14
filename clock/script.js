@@ -199,6 +199,9 @@ fontSizeSlider.addEventListener("input", (e) => {
   });
 });
 
+const event = new Event("input", { bubbles: true });
+fontSizeSlider.dispatchEvent(event);
+
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // フォント変更
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝

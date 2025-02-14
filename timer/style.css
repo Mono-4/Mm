@@ -41,6 +41,7 @@
 .container {
 
   gap: 50px;
+  width: calc(100vw - 250px);
 
 }
 

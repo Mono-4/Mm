@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minc Stopwatch</title>
+  <title>Timo Stopwatch</title>
   <meta name="description"
-    content="This is the most minimalist and fun to design stopwatch web app. | 最もミニマルでデザインを楽しめるストップウォッチウェブアプリです。">
-  <link rel="icon" href="fabi.png" type="image/x-icon">
+    content="10種類のモノで数字を表現する時計、ストップウォッチ、タイマーアプリ A clock, stopwatch, and timer app that displays numbers using 10 different objects">
+  <link rel="icon" href="../images/logo/fabi.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600&display=swap"
     rel="stylesheet">
@@ -54,7 +54,7 @@
           <img id="timeT" src="../images/font0/0.png" alt="00">
           <img id="timeT2" src="../images/font0/0.png" alt="00">
         </div> 
-          <div class="unit">10sec</div>
+          <div class="unit">cs</div>
         </div>
       </div>
       <button id="delete-btn" class="delete-btn">reset</button>
@@ -80,30 +80,30 @@
       <!--フォントカテゴリー ============================= -->
       <label for="font-size-slider">Fot category</label>
       <select id="fontSelector">
-        <option value="0">Noto sans</option>
-        <option value="1">缶</option>
-        <option value="2">キーボード</option>
-        <option value="3">ペットボトル</option>
-        <option value="4">本</option>
-        <option value="5">コード</option>
-        <option value="6">枝</option>
-        <option value="7">葉</option>
-        <option value="8">鏡</option>
-        <option value="9">レコード</option>
-        <option value="10">点字ブロック</option>
+        <option value="0">デフォルト Default</option>
+        <option value="1">アルミ缶 Aluminum cans </option>
+        <option value="2">ペットボトル Plastic bottles</option>
+        <option value="3">鏡 mirror</option>
+        <option value="4">キーボード Keyboards</option>
+        <option value="5">コード Cords</option>
+        <option value="6">レコード Records</option>
+        <option value="7">本 Books</option>
+        <option value="8">ガムテープ Duct tape</option>
+        <option value="9">枝 Branches</option>
+        <option value="10">葉 Leaves</option>
       </select>
       
       <div class="control-section">
-        <label for="font-size-slider">Font Size</label>
-        <input type="range" id="font-size-slider" min="2" max="10" value="2.5">
+        <label for="font-size-slider">サイズ Size</label>
+        <input type="range" id="font-size-slider" min="2" max="10" value="7">
       </div>
       <!--背景色（デフォルト指定） ============================= -->
       <div class="control-section">
-        <label for="stop-bg-color">BG when stopped </label>
+        <label for="stop-bg-color">停止時背景<br>BG when stopped </label>
         <input type="color" id="stop-bg-color" value="#cccccf">
       </div>
       <div class="control-section">
-        <label for="count-bg-color">BG when counting</label>
+        <label for="count-bg-color">カウント時背景<br>BG when counting</label>
         <input type="color" id="count-bg-color" value="#f0f0f0">
       </div>
       <!--ショートカット ============================= -->
@@ -112,7 +112,7 @@
       <!--タイトル、ロゴ、クレジット ============================= -->
      
       <div class="title-section">
-        <img class="logo" src="../images/fabi/fabi.png" alt="">
+        <img class="logo" src="../images/logo/logo.png" alt="">
         <a href="../clock/index.html">Clock</a>
         <a href="../timer/index.html">Timer</a>
 

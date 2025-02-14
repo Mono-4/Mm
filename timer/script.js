@@ -22,11 +22,7 @@ const stopBgColorPicker = document.getElementById("stop-bg-color");
 const countBgColorPicker = document.getElementById("count-bg-color");
 
 // 音声ファイル
-const start_audio = new Audio("../sound/0/start.wav");
-const stop_audio = new Audio("../sound/0/stop.wav");
-const delete_audio = new Audio("../sound/0/delete.wav");
-const swipe_audio = new Audio("../sound/0/swipe.wav");
-const tap_audio = new Audio("../sound/0/tap.wav");
+const audio1 = new Audio("../sound/0/start.wav");
 
 let running = false;
 let elapsedTime = 0;
@@ -128,7 +124,7 @@ let selectedFont=0;
       clearInterval(interval);
       running = false;
       startStopBtn_text.textContent = "START";
-      playAudio(start_audio);
+      playAudio(audio1);
 
     } else {
       if (totalMilliseconds <= 0) {
@@ -149,11 +145,11 @@ let selectedFont=0;
 
         } else {
           // start_audio.volume=1;
-          playAudio(start_audio); // 1回目
+          playAudio(audio1); // 1回目
 
-            playAudio(start_audio); // 2回目
+            playAudio(audio1); // 2回目
             setTimeout(() => {
-              playAudio(start_audio); // 3回目
+              playAudio(audio1); // 3回目
             },800); // 2回目と3回目の間の間隔（1000ミリ秒）
           clearInterval(interval);
           running = false;
@@ -346,6 +342,8 @@ document.addEventListener("keyup", (e) => {
   keydownHandled = false;
 });
 
+
+
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 // サウンド再生
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -376,6 +374,8 @@ fontSizeSlider.addEventListener("input", (e) => {
   });
 });
 
+const event = new Event("input", { bubbles: true });
+fontSizeSlider.dispatchEvent(event);
 
 
 

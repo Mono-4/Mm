@@ -306,6 +306,7 @@ select {
   }
   .container{
     gap:100px;
+    width: calc(100vw - 250px);
   }
   .time-box{
     gap:10px;
