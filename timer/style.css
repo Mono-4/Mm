@@ -109,10 +109,8 @@
 @media (max-width: 600px) {
   .container{
     width: calc(100vw - 150px);
+    height: auto;
+
   } 
-/* 
-  .adjust-select-buttons {
-    transform: translate(calc(150px/2));
-    margin-top:-100px ;
-  } */
+
 }
