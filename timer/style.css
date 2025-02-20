@@ -30,9 +30,8 @@
   .adjust-select-btn{
     width: 100px;
     height:40px;
-    color:var(--light-text);
+    /* color:var(--light-text); */
     font-size: 0.8rem;
-    
   }
   
 
@@ -41,12 +40,9 @@
 ストップウォッチ
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
 
-
 .container {
-
   gap: 100px;
   width: calc(100vw - 250px);
-
 }
 
 .plus-unit{

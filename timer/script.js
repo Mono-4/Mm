@@ -106,15 +106,15 @@ let selectedFont=0;
     adjustSelects.forEach((button) => (button.style.display = displayValue));
   
     // フォントフォルダに基づいて画像を更新
-    document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
-    document.getElementById("timeM").src = `../images/font${selectedFont}/${minutes[0]}.png`;
-    document.getElementById("timeS").src = `../images/font${selectedFont}/${seconds[0]}.png`;
-    document.getElementById("timeT").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
+    document.getElementById("timeH").src = `../image/font${selectedFont}/${hours[0]}.png`;
+    document.getElementById("timeM").src = `../image/font${selectedFont}/${minutes[0]}.png`;
+    document.getElementById("timeS").src = `../image/font${selectedFont}/${seconds[0]}.png`;
+    document.getElementById("timeT").src = `../image/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
   
-    document.getElementById("timeH2").src = `../images/font${selectedFont}/${hours[1]}.png`;
-    document.getElementById("timeM2").src = `../images/font${selectedFont}/${minutes[1]}.png`;
-    document.getElementById("timeS2").src = `../images/font${selectedFont}/${seconds[1]}.png`;
-    document.getElementById("timeT2").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
+    document.getElementById("timeH2").src = `../image/font${selectedFont}/${hours[1]}.png`;
+    document.getElementById("timeM2").src = `../image/font${selectedFont}/${minutes[1]}.png`;
+    document.getElementById("timeS2").src = `../image/font${selectedFont}/${seconds[1]}.png`;
+    document.getElementById("timeT2").src = `../image/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
   }
 
   
@@ -124,7 +124,9 @@ let selectedFont=0;
       clearInterval(interval);
       running = false;
       startStopBtn_text.textContent = "START";
+      document.body.style.backgroundColor = stopBgColorPicker.value; 
       playAudio(audio1);
+      // updateDisplay(); // ボタンの表示を更新
 
     } else {
       if (totalMilliseconds <= 0) {
@@ -141,12 +143,9 @@ let selectedFont=0;
           totalMilliseconds -= 10; // 10msずつ減らす
           updateDisplay();
           updateBackgroundColor();
-
-
         } else {
           // start_audio.volume=1;
           playAudio(audio1); // 1回目
-
             playAudio(audio1); // 2回目
             setTimeout(() => {
               playAudio(audio1); // 3回目
@@ -166,6 +165,8 @@ let selectedFont=0;
       }, 10);
     }
     updateDisplay(); // ボタンの表示状態を更新
+    updateBackgroundColor();
+
   }
   // タイマーのリセット
   function resetTimer() {

@@ -102,15 +102,15 @@ function updateDisplay() {
   document.title = `${hours}:${minutes}:${seconds}:${tenthsOfMilliseconds}`;
 
   // フォントフォルダに基づいて画像を更新
-  document.getElementById("timeH").src = `../images/font${selectedFont}/${hours[0]}.png`;
-  document.getElementById("timeM").src = `../images/font${selectedFont}/${minutes[0]}.png`;
-  document.getElementById("timeS").src = `../images/font${selectedFont}/${seconds[0]}.png`;
-  document.getElementById("timeT").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
+  document.getElementById("timeH").src = `../image/font${selectedFont}/${hours[0]}.png`;
+  document.getElementById("timeM").src = `../image/font${selectedFont}/${minutes[0]}.png`;
+  document.getElementById("timeS").src = `../image/font${selectedFont}/${seconds[0]}.png`;
+  document.getElementById("timeT").src = `../image/font${selectedFont}/${tenthsOfMilliseconds[0]}.png`;
 
-  document.getElementById("timeH2").src = `../images/font${selectedFont}/${hours[1]}.png`;
-  document.getElementById("timeM2").src = `../images/font${selectedFont}/${minutes[1]}.png`;
-  document.getElementById("timeS2").src = `../images/font${selectedFont}/${seconds[1]}.png`;
-  document.getElementById("timeT2").src = `../images/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
+  document.getElementById("timeH2").src = `../image/font${selectedFont}/${hours[1]}.png`;
+  document.getElementById("timeM2").src = `../image/font${selectedFont}/${minutes[1]}.png`;
+  document.getElementById("timeS2").src = `../image/font${selectedFont}/${seconds[1]}.png`;
+  document.getElementById("timeT2").src = `../image/font${selectedFont}/${tenthsOfMilliseconds[1]}.png`;
 }
 
 
