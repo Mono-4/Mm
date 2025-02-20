@@ -29,6 +29,13 @@
       align-items: center;
       letter-spacing: 0.5rem;
     }
+    .timeimages{
+      margin: -4px;
+    }
+    .unit{
+      margin: -8px;
+
+    }
     .time {
       flex-direction: column;
       gap:0px;
