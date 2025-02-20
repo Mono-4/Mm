@@ -54,8 +54,8 @@
   height: 200px;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .container{
     gap:100px;
   } 
-}
+} */

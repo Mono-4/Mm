@@ -59,7 +59,6 @@
 
 @media (max-width: 600px) {
   .container{
-    gap:10px;
   } 
   #start-stop-btn {
     transform: translate(calc(-150px/2));
