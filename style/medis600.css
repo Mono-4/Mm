@@ -14,9 +14,12 @@
     }
     .sidebar {
       font-size: 0.8rem;
-      padding: 40px 8px 40px 8px;
+      padding: 40px 8px 80px 8px;
       gap: 40px;
       width: 150px;
+    }
+    .sidebar-top{
+      gap: 20px;
     }
     .stopwatch-display {
       height: 100%;
