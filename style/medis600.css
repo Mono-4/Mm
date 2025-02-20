@@ -61,6 +61,7 @@
     .adjust-buttons{
       justify-content: center;
       flex-wrap: wrap;
+      gap:2px;
       /* transform: translateY(-100px); */
       /* gap:1px; */
     }
