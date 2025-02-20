@@ -6,10 +6,8 @@
       font-size: 18px; /* 基本フォントサイズ */
     }
     .container{
-      gap:0px;
       width: calc(100vw - 150px);
       justify-content: center;
-
     }
     .sidebar {
       font-size: 0.8rem;

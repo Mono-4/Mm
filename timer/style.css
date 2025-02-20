@@ -110,7 +110,6 @@
   .container{
     width: calc(100vw - 150px);
     height: auto;
-
+    gap:0px;
   } 
-
 }
